@@ -1,0 +1,56 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"  >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+<nav>
+    <div>
+        <h2>Akademia</h2>
+    </div>
+    <ul >
+        <li>
+            <a href="">Cars</a>
+        </li>
+        <li>
+            <a href="">Engines</a>
+        </li>
+        <li>
+            <a href="" >Wheels</a>
+    </ul>
+</nav>
+<!-- Code block header starts -->
+<div >
+    <h2>Car Registration</h2>
+
+    <form>
+
+        <input   type="hidden"/>
+        <input  type="text" placeholder="Car Name "/>
+        <input  type="text" placeholder="Car Type" />
+        <input  type="text" placeholder="From Year "/>
+        <input  type="text" placeholder="To Year"/>
+        <div>
+            <select >
+                <option disabled selected>Select car engine type</option>
+                <option value="Albania">Albania</option>
+                <option value="Kosovo">Kosovo</option>
+                <option value="North Macedonia">North Macedonia</option>
+            </select>
+            <select >
+                <option disabled selected>Select car wheels type</option>
+                <option value="Albania">Albania</option>
+                <option value="Kosovo">Kosovo</option>
+                <option value="North Macedonia">North Macedonia</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit"  >
+                Submit</button>
+        </div>
+    </form>
+    <!-- Code block form end -->
+</div>
+</body>

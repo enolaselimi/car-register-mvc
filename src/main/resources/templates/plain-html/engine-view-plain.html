@@ -1,0 +1,61 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}" >
+<head> <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<nav>
+    <div>
+        <h2>Akademia</h2>
+    </div>
+    <ul >
+        <li>
+            <a href="">Cars</a>
+        </li>
+        <li>
+            <a href="">Engines</a>
+        </li>
+        <li>
+            <a href="" >Wheels</a>
+    </ul>
+</nav>
+<div layout:fragment="page-content">
+
+    <div >
+        <h2 >Engines</h2>
+        <button>
+            <a href="" >Add Engine</a>
+        </button>
+
+    </div>
+</div>
+
+<table layout:fragment="page-content">
+
+<thead>
+<tr>
+    <th>ID</th>
+    <th>Engine Power</th>
+    <th>Engine Type</th>
+    <th>
+        <span>Edit</span>
+    </th>
+    <th>
+        <span>Delete</span>
+    </th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="engine : ${engineList}">
+    <th th:text="${engine.id}"></th>
+    <td th:text="${engine.power}"></td>
+    <td th:text="${engine.type}"></td>
+    <td><a th:href="@{/engine/edit/{id}(id=${engine.id})}">Edit</a></td>
+    <td><a th:href="@{/engine/delete/{id}(id=${engine.id})}">Delete</a></td>
+</tr>
+</tbody>
+</table>
+</body>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<ul th:fragment="sidebar">
+    <li style="display:inline-block">
+        <a th:href="@{/cars}"> CARS </a>
+    </li>
+    <li style="display:inline-block">
+        <a th:href="@{/cars/engine}"> ENGINES </a>
+    </li>
+    <li style="display:inline-block">
+        <a th:href="@{/cars/wheels}"> WHEELS </a>
+    </li>
+</ul>
+</body>
+</html>
