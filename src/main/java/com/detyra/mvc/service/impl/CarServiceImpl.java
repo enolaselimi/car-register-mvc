@@ -34,7 +34,7 @@ public class CarServiceImpl implements CarService {
     public List<CarDTO> findAll() {
         List<CarEntity> carsList = carRepository.findAll();
         return carsList.stream()
-                .map(c -> toCarDTO(c))
+                .map(CarConverter::toCarDTO)
                 .collect(Collectors.toList());
     }
 

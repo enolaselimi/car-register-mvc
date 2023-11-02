@@ -3,6 +3,7 @@ package com.detyra.mvc.service.impl;
 import com.detyra.mvc.domain.dto.EngineDTO;
 import com.detyra.mvc.domain.dto.EngineRequest;
 import com.detyra.mvc.domain.entity.EngineEntity;
+import com.detyra.mvc.domain.filter.Filter;
 import com.detyra.mvc.domain.mappers.EngineConverter;
 import com.detyra.mvc.repository.EngineRepository;
 import com.detyra.mvc.service.EngineService;
@@ -20,10 +21,10 @@ public class EngineServiceImpl implements EngineService {
     private EngineRepository engineRepository;
 
     @Override
-    public List<EngineDTO> findAll() {
-        List<EngineEntity> engines = engineRepository.findAll();
+    public List<EngineDTO> findAll(Filter...filters) {
+        List<EngineEntity> engines = engineRepository.findAll(filters);
         return engines.stream()
-                .map(e -> toEngineDTO(e))
+                .map(EngineConverter::toEngineDTO)
                 .collect(Collectors.toList());
     }
 

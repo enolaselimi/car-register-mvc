@@ -52,7 +52,7 @@ public class WheelsController {
 
     @GetMapping("/{wheelsId}/delete")
     public String deleteWheels(@PathVariable Integer wheelsId){
-        WheelsDTO wheelsDTO = wheelsService.delete(wheelsId);
+        wheelsService.delete(wheelsId);
         return "redirect:/cars/wheels";
     }
 }

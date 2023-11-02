@@ -17,7 +17,7 @@ public class CarRepositoryImpl implements CarRepository {
     private static final String FIND_ALL_QUERY = "SELECT c FROM CarEntity c";
 
     @Override
-    public List<CarEntity> findAll() {
+    public List<CarEntity> findAll(){
         return entityManager.createQuery(FIND_ALL_QUERY, CarEntity.class)
                 .getResultList();
     }
